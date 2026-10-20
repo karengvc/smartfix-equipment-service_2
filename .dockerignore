@@ -1,0 +1,6 @@
+.git
+.idea
+*.iml
+src
+target/*
+!target/smartfix-equipment-service-2-0.0.1-SNAPSHOT.jar
