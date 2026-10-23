@@ -3,7 +3,7 @@ WORKDIR /app
 COPY .mvn .mvn
 COPY mvnw pom.xml ./
 COPY src src
-RUN chmod +x mvnw && ./mvnw -DskipTests package
+RUN sed -i 's/\r$//' mvnw && chmod +x mvnw && ./mvnw -DskipTests package
 
 FROM eclipse-temurin:25-jre
 WORKDIR /app
