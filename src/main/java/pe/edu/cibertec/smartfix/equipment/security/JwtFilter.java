@@ -57,7 +57,7 @@ public class JwtFilter extends OncePerRequestFilter {
     private Set<String> rolesPermitidos(String metodo, String ruta) {
         return switch (metodo) {
             case "GET" -> Set.of();
-            case "POST" -> Set.of(ADMIN, USUARIO);
+            case "POST" -> Set.of(ADMIN, TECNICO, USUARIO);
             default -> Set.of(ADMIN);
         };
     }
