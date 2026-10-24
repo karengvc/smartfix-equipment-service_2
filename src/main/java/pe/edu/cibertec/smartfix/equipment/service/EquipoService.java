@@ -21,6 +21,10 @@ public class EquipoService {
         return equipoRepository.findAll();
     }
 
+    public List<Equipo> listarPorPropietario(Long propietarioId) {
+        return equipoRepository.findByPropietarioIdOrderByIdDesc(propietarioId);
+    }
+
     public Equipo obtenerEquipo(Long id) {
         return equipoRepository.findById(id)
                 .orElseThrow(() ->
@@ -43,6 +47,7 @@ public class EquipoService {
         equipo.setNumeroSerie(datos.getNumeroSerie());
         equipo.setEstado(datos.getEstado());
         equipo.setDescripcion(datos.getDescripcion());
+        equipo.setPropietarioId(datos.getPropietarioId());
 
         return equipoRepository.save(equipo);
     }

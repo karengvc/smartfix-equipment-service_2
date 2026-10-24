@@ -52,4 +52,7 @@ public class Equipo {
     @Size(max = 500)
     @Column(length = 500)
     private String descripcion;
+
+    @Column(name = "propietario_id")
+    private Long propietarioId;
 }
